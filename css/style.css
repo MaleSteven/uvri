@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('../images/img2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  background-color: gray;
+  border-radius: 8px;
+  padding: 10px;
+  color: #FCD116;
+}
+
+h2 { 
+  color: #FCD116; 
+  text-align: center; 
+}
+
+a { 
+  color: #4FC3F7; 
+  font-size: 18px; 
+  text-decoration: none; 
+  margin-left: 15px;
+}
+a:hover { 
+  color: #ffffff; 
+  text-decoration: underline;
+}
+
+p { 
+  color: #ffffff; 
+  line-height: 1.6; 
+}
