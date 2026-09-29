@@ -55,5 +55,27 @@ style="border-radius: 10px;">
     View Current Advisories</a></p>
 <a href="Explore Research Programs" style="color: #FCD116;font-size:18pt;">
     Explore Research Programs</a>
+    <script>
+  // List your background images
+  const images = [
+    'images/img2.jpg',
+    'images/img1.jpg',
+    'images/image1.jpg',
+    'images/image4.jpg'
+  ];
+
+  let current = 0;
+
+  function changeBackground() {
+    current = (current + 1) % images.length;
+    document.body.style.backgroundImage = 
+      `linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('${images[current]}')`;
+  }
+
+  // Change every 4 seconds
+  setInterval(changeBackground, 3000);
+</script>
+</body>
+</html>
 </body>
 </html>
