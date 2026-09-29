@@ -65,8 +65,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.contact-section {
-  background: rgba(0, 0, 0, 0.7);
+
   border: 1px solid #FCD116;
   border-radius: 6px;
   padding: 10px;
@@ -114,4 +113,40 @@ body {
   width: 100%;
   border-radius: 10px;
 }
+.contact-section {
+  margin-bottom: 60px !important;
+}
 
+.building-image {
+  margin-top: 40px;
+}
+
+.building-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  border: 2px solid #FCD116;
+  display: block;
+  margin: 0 auto;
+}
+.contact-section {
+  background: #111 !important; /* solid, no virus behind */
+  padding: 25px;
+  border: 1px solid #FCD116;
+  border-radius: 10px;
+  margin-bottom: 100px !important; /* big space after table */
+}
+/* MAKE CONTACT TABLE SMALLER */
+.contact-section {
+  max-width: 450px !important; /* change to 600px for even smaller */
+  width: 85% !important;
+  margin: 30px 0 30px 20px !important; /* 20px from left edge */
+  margin-left: 20px !important;
+  margin-right: auto !important;
+  padding: 15px !important;
+}
+
+.contact-grid {
+  gap: 12px !important;
+  font-size: 14px !important; /* smaller text = smaller table */
+}
