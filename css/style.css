@@ -58,3 +58,10 @@ h2 {
 h3, .contact-title {
   color: #FCD116 !important;
 }
+body {
+  transition: background-image 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
