@@ -71,7 +71,7 @@ body {
   border-radius: 12px;
   padding: 25px;
   margin-top: 30px;
-  max-width: 800px;
+  max-width: 500px;
 }
 
 .contact-section h3 {
@@ -106,14 +106,3 @@ body {
   font-size: 15px;
 }
 
-.building-image {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.building-image img {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-  border: 2px solid #FCD116;
-}
