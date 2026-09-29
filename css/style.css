@@ -114,3 +114,14 @@ body {
   width: 100%;
   border-radius: 10px;
 }
+/* FORCE space between table and building image */
+.contact-grid {
+  margin-bottom: 50px !important;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(252, 209, 22, 0.3);
+}
+
+.building-image {
+  margin-top: 30px !important;
+  padding-top: 10px;
+}
