@@ -36,3 +36,25 @@ p {
   color: #ffffff; 
   line-height: 1.6; 
 }
+nav {
+  background-color: rgba(0,0,0,0.6);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+nav a {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #FCD116 !important;
+}
+
+h2 {
+  color: #FCD116 !important; /* your UGANDA... title */
+}
+
+/* Fix Contact info orange - hard to read */
+h3, .contact-title {
+  color: #FCD116 !important;
+}
