@@ -162,3 +162,32 @@ body {
 .footer p {
   margin: 5px 0;
 }
+.tables-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* stacks on phone */
+}
+
+.contact-table-box, .uvri-info-box {
+  flex: 1; /* each takes 50% */
+  min-width: 300px; /* don't get too small */
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.tables-row table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tables-row td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.tables-row td:first-child {
+  font-weight: bold;
+}
