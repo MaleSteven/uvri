@@ -1,62 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UVRI - Uganda Virus Research Institute</title>
-<style>
+  <style>
+ 
+
+/* Slideshow - DARK and dim */
+.slideshow {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index: -1;
+}
+.slideshow img {
+  position: absolute;
+  width:100%; height:100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  filter: brightness(30%); /* BEST: makes images dark */
+}
+.slideshow img.active {
+  opacity: 1; /* full but dark due to filter */
+}
+.slideshow::after {
+  content: "";
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(37, 47, 63, 0.65); /* BEST dark blue overlay */
+}
+
+nav {
+  background: rgba(0,0,0,0.3);
+  padding: 14px 0;
+  text-align: center;
+}
+nav a { color: white; text-decoration: none; margin: 0 20px; }
+
+.content-card {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 35px;
+  background: rgba(211, 205, 205, 0.08); /* glass effect */
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+}
+
+table { width:60%; border-collapse: collapse; color:white; }
+th { background: #c9a227 !important; color:#0f2340 !important; padding:12px; }
+td { border:1px solid rgba(255,255,255,0.3) !important; padding:10px; }
+
+footer { background: rgba(0,0,0,0.4); color:white; text-align:center; padding:15px 0; margin-top:40px; }
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style>
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #1e2a4a;
-  color: white;
+  background: #eef2f7; /* Improved soft light blue-grey */
+  color: #222;
 }
-.slideshow {
-  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
-}
-.slideshow img {
-  position: absolute; width:100%; height:100%; object-fit: cover;
-  opacity:0; transition: opacity 2s ease-in-out; filter: brightness(30%);
-}
-.slideshow img.active { opacity: 1; }
-.slideshow::after {
-  content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-  background: rgba(30, 42, 74, 0.85);
-}
-.menu-bar {
-  background: #151f38; padding: 16px; text-align: center;
-  border-bottom: 3px solid #c9a227; position: sticky; top:0; z-index:10;
-}
-.menu-bar a {
-  color: white; text-decoration: none; margin: 0 18px;
-  font-size: 16px; font-weight: 600;
-}
-.menu-bar a:hover { color: #c9a227; }
-.content-wrapper { width:95%; max-width:1100px; margin:0 auto; padding:25px 0; }
-.content-card {
-  background: rgba(255,255,255,0.07); padding: 30px;
-  border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(6px);
-}
-table { width:60%; border-collapse: collapse; color:white; border-radius:8px; overflow:hidden; }
-th { background:#c9a227!important; color:#1e2a4a!important; padding:13px; text-align:left; font-size:17px; }
-td { border:1px solid rgba(255,255,255,0.2)!important; padding:11px; }
 
-.btn {
-  background: transparent; color: white; border: 2px solid rgba(255,255,255,0.7);
-  padding: 13px 26px; border-radius: 30px; cursor: pointer; font-size: 15px;
-  font-weight: bold; margin: 6px; text-decoration: none; display: inline-block; transition: 0.3s;
+/* Top menu - keep full width */
+nav {
+  background: #0f2340 !important;
 }
-.btn:hover { background: white; color: #1e2a4a; border-color:white; }
-.btn-gold {
-  background: #c9a227; color: #1e2a4a; border: 2px solid #c9a227;
+
+/* Main content area */
+.content-wrapper {
+  background: white;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-top: 4px solid #c9a227; /* Gold accent from Uganda coat of arms */
 }
-.btn-gold:hover { background: transparent; color: #c9a227; }
-footer { background: #151f38; color: #a0aec0; text-align: center; padding: 25px 0; margin-top: 50px; font-size:14px; }
+
+/* Table improvement */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+th {
+  background: #0f2340 !important;
+}
+
+/* If you keep slideshow, make it visible but professional */
+.slideshow img.active {
+  opacity: 0.15 !important; /* Very light so it doesn't wash out text */
+}
+
+footer {
+  background: #0f2340 !important;
+  padding: 20px 0 !important;
+}
 </style>
 </head>
-<body>
-
+<body style="background-color: #1e2a4a; color: white;">
+  <!-- BACKGROUND SLIDESHOW -->
 <div class="slideshow">
   <img src="images/img1.jpg" class="active">
   <img src="images/img2.jpg">
@@ -65,68 +111,6 @@ footer { background: #151f38; color: #a0aec0; text-align: center; padding: 25px 
   <img src="images/img5.jpg">
 </div>
 
-<div class="menu-bar">
-  <a href="Home.html">Home</a>
-  <a href="About Us.html">About Us</a>
-  <a href="Services.html">Services</a>
-  <a href="Gallery.html">Gallery</a>
-  <a href="contact.html">Contact Us</a>
-</div>
-
-<div class="content-wrapper">
-
-  <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 15px;">
-    <img src="images/image1.jpg" alt="UVRI Logo" style="width: 110px; height: 110px; object-fit: contain; background:white; border-radius:50%; padding:8px;">
-    <div>
-      <h1 style="margin:0; font-size:38px; letter-spacing:2px;">UVRI</h1>
-      <h2 style="margin:0; font-size:16px; font-weight:400; color:#c9a227; letter-spacing:1px;">UGANDA VIRUS RESEARCH INSTITUTE</h2>
-    </div>
-  </div>
-
-  <div class="content-card">
-    <p style="font-weight: bold; font-size:20px; color:#c9a227; margin-top:0;">
-      Protecting Uganda, One Discovery at a Time.
-    </p>
-
-    <p style="text-align: justify; line-height: 1.9; font-size:16px; color:#e2e8f0;">
-      Welcome to UVRI. We are more than just a laboratory on Nakiwogo Road in Entebbe —
-      we are your neighbours, your family, and a team of Ugandan scientists dedicated to keeping our communities safe.
-      <br><br>
-      Every day, our team wakes up with one purpose: to study the viruses that affect our people. From HIV, Ebola,
-      and Marburg to the new threats that appear without warning, we track them, we test them, and we find ways to stop them.
-      <br><br>
-      We work hand-in-hand with the Ministry of Health and health workers across the country because we believe
-      science is only useful when it serves the people. This is our home, this is our calling, and we are proud to serve Uganda.
-    </p>
-
-    <div style="display: flex; gap: 25px; align-items: flex-start; margin-top: 35px; flex-wrap:wrap;">
-      <table>
-        <tr><th colspan="2">Come Talk to Us - We Are Here to Help</th></tr>
-        <tr><td style="font-weight:bold; width:100px;">Find Us:</td><td>Nakiwogo Road, Entebbe, Uganda</td></tr>
-        <tr><td style="font-weight:bold;">Email Us:</td><td>info@uvri.go.ug</td></tr>
-        <tr><td style="font-weight:bold;">Call Us:</td><td>0330 808 5456 (Mon - Fri, 8am - 4pm)</td></tr>
-      </table>
-
-      <div style="width: 35%; min-width:250px;">
-        <img src="images/images3.jpg" alt="UVRI Lab Team" style="width: 100%; height: 170px; object-fit:cover; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2);">
-        <p style="font-size:13px; text-align:center; color:#a0aec0; margin-top:6px;">Our team at work in Entebbe</p>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin: 40px 0 10px 0;">
-      <a href="research.php" class="btn">See What We Are Researching</a>
-      <a href="contact.php" class="btn btn-gold">Talk to Our Team</a>
-      <a href="about.php" class="btn">Meet The People Behind UVRI</a>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Uganda Virus Research Institute | Entebbe, Uganda<br>
-  <span style="color:#c9a227;">Built with pride for Uganda</span>
-</footer>
-
 <script>
 let slides = document.querySelectorAll('.slideshow img');
 let current = 0;
@@ -134,8 +118,101 @@ setInterval(function(){
   slides[current].classList.remove('active');
   current = (current + 1) % slides.length;
   slides[current].classList.add('active');
-}, 4000);
+}, 4000); // changes every 4 seconds
 </script>
+    <style>
+    body { margin: 0; font-family: Arial; }
+    /* MENU BAR */
+    .menu-bar {
+      background-color: #003366;
+      padding: 15px;
+      text-align: center;
+    }
+    .menu-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .menu-bar a:hover {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
 
+  <!-- THIS IS THE MENU BAR WITH LINKS -->
+  <div class="menu-bar">
+    <a href="Home.html">Home</a>
+    <a href="About Us.html">About Us</a>
+    <a href="Services.html">Services</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+    <div style="width: 95%; max-width: 1100px; margin: 0 auto; padding: 20px 0; font-family:
+     Arial, sans-serif;">
+
+  <!-- LOGO + UVRI HEADING -->
+<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+  <img src="images/image1.jpg" alt="UVRI Logo" style="width: 150px; height: 150px;
+   object-fit: contain;">
+  <div>
+    <h1 style="margin: 0; line-height: 1;">UVRI</h1>
+    <h2 style="margin: 0; font-size: 18px;">UGANDA VIRUS RESEARCH INSTITUTE</h2>
+  </div>
+</div>
+  
+  <p style="text-align: left; font-weight: bold; margin: 20px 0;">
+    Studying the viruses that shape public health in East Africa
+  </p>
+
+  <p style="text-align: justify; line-height: 1.8; padding: 0 15px;">
+    The Uganda Virus Research Institute is a country's national reference laboratory for viral disease, <br> 
+    supporting the Ministry of Health in surveillance, diagnostics, and research into arboviral diseases, <br>
+    haemorrhagic fevers, HIV, and emerging pathogens.
+  </p>
+    <h3 style="text-align: left;">Contact Information</h3>
+  </p>
+<!-- TABLE + IMAGE SIDE BY SIDE -->
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 20px;">
+
+
+  <table style="width: 60%; border-collapse: collapse; font-family: Arial, sans-serif;">
+    <tr>
+      <th colspan="2" style="background: #1a365d; color: white; padding: 12px; text-align: left;">
+        Contact Information
+      </th>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; width: 100px;">Address:</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">Nakiwogo Road, Entebbe</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Email:</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">info@uvri.example.ug</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Phone:</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">Call 03308085456 (open Mon-Fri 8am-4pm)</td>
+    </tr>
+  </table>
+
+  <!-- RIGHT: IMAGE -->
+  <div style="width: 40%;">
+    <img src="images/images3.jpg" alt="UVRI Lab" style="width: 450px; height: 160px; border-radius: 8px; border: 1px solid #ddd;">
+  </div>
+
+</div>
+  <footer style="background: #003366; color: white; text-align: center; padding: 15px 0; width: 100%; 
+  position:relative; left: 0; right: 0; margin : 40px 0 0 0; font-family: Arial, sans-serif;">
+    © 2026 Uganda Virus Research Institute
+    <div style="text-align:center; margin: 30px 0;">
+  <a href="research.php" class="btn">View Research</a>
+  <a href="contact.php" class="btn btn-gold">Contact Us</a>
+  <button class="btn" onclick="location.href='about.php'">About UVRI</button>
+</div>
+  </footer
 </body>
 </html>
