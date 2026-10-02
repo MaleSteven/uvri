@@ -1,8 +1,8 @@
-/* WHOLE PAGE BACKGROUND IMAGE WITH DARK NAVY OVERLAY */
+/* WHOLE PAGE BACKGROUND IMAGE */
 body {
   margin: 0;
   font-family: Arial;
-  background: linear-gradient(rgba(0, 11, 51, 0.8), rgba(0, 11, 51, 0.8)), url('images/image1.jpg');
+  background-image: url('images/image1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
