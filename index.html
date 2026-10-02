@@ -2,6 +2,46 @@
 <html>
 <head>
 <title>UVRI</title>
+<style>
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade 12s infinite;
+  }
+  .slide1 { background-image: url('images/image1.jpg'); animation-delay: 0s; }
+  .slide2 { background-image: url('images/image2.jpg'); animation-delay: 4s; }
+  .slide3 { background-image: url('images/image3.jpg'); animation-delay: 8s; }
+
+  @keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+</style>
 </head>
 <body style="margin:0; font-family: Arial; background:#f5f5f5;">
 
@@ -20,38 +60,36 @@
   </div>
 </div>
 
+<!-- BACKGROUND SLIDESHOW -->
+<div class="slideshow">
+  <div class="slide slide1"></div>
+  <div class="slide slide2"></div>
+  <div class="slide slide3"></div>
+  <div class="overlay">
+    <div>
+      <h2>Studying the viruses that shape public health in East Africa</h2>
+      <p>The Uganda Virus Research Institute is a country's national reference laboratory for viral disease</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
 <div style="padding:20px 30px;">
-  <p style="text-align:justify; font-weight:bold;">
-    Studying the viruses that shape public health in East Africa.
-  </p>
   <p style="text-align:justify; line-height:1.8;">
-    The Uganda Virus Research Institute is a country's national reference laboratory for viral disease, 
-    supporting the Ministry of Health with surveillance, diagnostics, and research into arboviral diseases, 
-    viral haemorrhagic fevers, HIV, and emerging pathogens.
+    The Uganda Virus Research Institute supporting the Ministry of Health with surveillance, diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV, and emerging pathogens.
   </p>
 
   <h3>Contact Information</h3>
-  
-  <!-- TABLE + IMAGE SIDE BY SIDE -->
   <div style="display:flex; gap:20px; align-items:flex-start;">
-
-    <!-- SMALL TABLE -->
     <table border="1" cellpadding="10" cellspacing="0" style="border-collapse:collapse; width:50%; background:white; font-size:14px;">
-      <tr style="background:gray; color:white;">
-        <th style="text-align:left;">Item</th>
-        <th style="text-align:left;">Details</th>
-      </tr>
+      <tr style="background:gray; color:white;"><th style="text-align:left;">Item</th><th style="text-align:left;">Details</th></tr>
       <tr><td>Address</td><td>Nakiwogo Road, Entebbe</td></tr>
       <tr><td>Email</td><td>info@uvri.example.ug</td></tr>
       <tr><td>Copyright</td><td>© 2026 UVRI</td></tr>
       <tr><td>Phone</td><td>03308085456</td></tr>
     </table>
-
-    <!-- IMAGE BESIDE TABLE -->
-    <img src="images/images3.jpg" alt="UVRI Lab" style="width:48%; height:200px; object-fit:cover; border-radius:8px;">
-
+    <img src="images/image2.jpg" alt="UVRI" style="width:48%; height:200px; object-fit:cover; border-radius:8px;">
   </div>
-
 </div>
 
 </body>
