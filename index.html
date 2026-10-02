@@ -75,6 +75,7 @@
     <img src="images/image1.jpg" alt="Logo" width="100" height="100" style="background: white; border-radius: 50%;">
     <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
   </div>
+  <!-- Applied the nav-links class to control hover dynamics cleanly -->
   <div class="nav-links" style="display: flex; gap: 25px; font-size: 18px; font-weight: bold;">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -87,14 +88,15 @@
 <!-- PAGE CONTENT -->
 <div style="padding:20px 30px;">
 
-  <!-- THREE-COLUMN HORIZONTAL GRID STRUCTURE -->
-  <div style="display: flex; gap: 30px; margin-bottom: 20px; align-items: flex-start;">
+  <!-- FLEX CONTAINER FOR SIDE-BY-SIDE COLUMNS -->
+  <div style="display: flex; gap: 30px; margin-bottom: 20px;">
     
     <!-- Left Column: First Paragraphs -->
     <div style="flex: 1;">
       <p style="text-align:justify; font-weight:bold; color: rgb(244, 244, 10); line-height:1.8; margin-top: 0;">
         Studying the viruses that shape public health in East Africa.
       </p>
+
       <p style="text-align:justify; line-height:1.8; margin-bottom: 0;">
         The Uganda Virus Research Institute is a country’s national reference laboratory  
         for viral disease, supporting the Ministry of Health with surveillance,  
@@ -103,7 +105,7 @@
       </p>
     </div>
 
-    <!-- Middle Column: Key Focus Areas -->
+    <!-- Right Column: Key Focus Areas (Now free of borders and backgrounds) -->
     <div style="flex: 1;">
       <h4 style="margin-top: 0; color: rgb(244, 244, 10); font-size: 16px;">Key Focus Areas</h4>
       <ul style="margin: 0; padding-left: 20px; line-height: 1.8; font-size: 14px;">
@@ -112,17 +114,6 @@
         <li>Epidemiological Surveillance & Diagnostics</li>
         <li>Emerging Pathogen Outbreak Response</li>
       </ul>
-    </div>
-
-    <!-- Right Column: Institutional Video Placement from UVRI Digital Hub -->
-    <div style="flex: 1;">
-      <h4 style="margin-top: 0; color: rgb(244, 244, 10); font-size: 16px;">Overview Video</h4>
-      <!-- Embedded Video Box Framework (Set to use 2-minute UVRI digital asset loop) -->
-      <div style="width: 100%; border: 2px solid #fbbf24; border-radius: 8px; overflow: hidden; background: #1e293b; height: 135px; display: flex; align-items: center; justify-content: center;">
-        <span style="font-size: 12px; color: #fbbf24; font-weight: bold; text-align: center; padding: 10px;">
-          https://www.youtube.com/watch?v=yBdG5yj_AOk&pp=ygUEdXZyaQ%3D%3D
-        </span>
-      </div>
     </div>
 
   </div>
@@ -195,3 +186,4 @@
 
 </div>
 </body>
+</html>
