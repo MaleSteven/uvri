@@ -1,97 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uganda Virus Research Institute</title>
-<link rel="stylesheet" href="css/style.css">
+  <style>
+.slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.slideshow img.active {
+  opacity: 0.2; /* 0.2 = light background so text is readable, change to 0.5 if you want brighter */
+}
+.content-wrapper {
+  background: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #eef2f7; /* Improved soft light blue-grey */
+  color: #222;
+}
+
+/* Top menu - keep full width */
+nav {
+  background: #0f2340 !important;
+}
+
+/* Main content area */
+.content-wrapper {
+  background: white;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-top: 4px solid #c9a227; /* Gold accent from Uganda coat of arms */
+}
+
+/* Table improvement */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+th {
+  background: #0f2340 !important;
+}
+
+/* If you keep slideshow, make it visible but professional */
+.slideshow img.active {
+  opacity: 0.15 !important; /* Very light so it doesn't wash out text */
+}
+
+footer {
+  background: #0f2340 !important;
+  padding: 20px 0 !important;
+}
+</style>
+</head>
+<body>
+  <!-- BACKGROUND SLIDESHOW -->
+<div class="slideshow">
+  <img src="images/img1.jpg" class="active">
+  <img src="images/img2.jpg">
+  <img src="images/img3.jpg">
+  <img src="images/img4.jpg">
+  <img src="images/img5.jpg">
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slideshow img');
+let current = 0;
+setInterval(function(){
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4000); // changes every 4 seconds
+</script>
+    <style>
+    body { margin: 0; font-family: Arial; }
+    /* MENU BAR */
+    .menu-bar {
+      background-color: #003366;
+      padding: 15px;
+      text-align: center;
+    }
+    .menu-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .menu-bar a:hover {
+      color: yellow;
+    }
+  </style>
 </head>
 <body>
 
-<div style="text-align: center;"
-<h1>UVRI</h1>
-<a href="#"Home"></a> |
-   <a href="#"About us"></a> |
-   <a href="#"Services"></a> |
-   <a href="#"Gallery"></a> |
-   <a href="#"Contact Us"></a>
-</div>
-
-<h2>
-<center>UGANDA VIRUS RESEARCH INSTITUTE</center>
- </h2>
-<img src="./images/image1.jpg" height="100" width="200" alt=""
-     style="border-radius: 10px;">
- <h3>
- <u>Studying the viruses that shape public health in East Africa.</u>
-</h3>
-    <p style="font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size:14pt;">
- The Uganda Virus Research Institute is a country’s 
-
-  national reference laboratory for viral disease,
-
-  supporting the Ministry of Health with surveillance,
-
-  diagnostics, and research into arboviral diseases, viral 
-
-  haemorrhagic fevers, HIV, and emerging pathogens.</p>
-
-    <div class="tables-row">
-    <div class="contact-table-box">
-      <h3>Contact Info</h3>
-      <table>
-        <tr><td>Phone</td><td>+256 417 704000</td></tr>
-        <tr><td>Email</td><td>info@uvri.go.ug</td></tr>
-      </table>
-    </div>
-
-    <div class="uvri-info-box">
-      <h3>About UVRI</h3>
-      <table class="uvri-table">
-        <tr><td>Founded</td><td>1937</td></tr>
-        <tr><td>Location</td><td>Entebbe, Uganda</td></tr>
-        <tr><td>Oversight</td><td>Ministry of Health</td></tr>
-        <tr><td>Designation</td><td>WHO Collaborating Centre</td></tr>
-      </table>
-    </div>
+  <!-- THIS IS THE MENU BAR WITH LINKS -->
+  <div class="menu-bar">
+    <a href="Home.html">Home</a>
+    <a href="About Us.html">About Us</a>
+    <a href="Services.html">Services</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="contact.html">Contact Us</a>
   </div>
-    <h3>Contact Info</h3>
-    <p><strong>Location:</strong> Plot 51-59 Nakiwogo Road, Entebbe, Uganda</p>
-    <p><strong>Email:</strong>
-  <!-- BUILDING IMAGE OUTSIDE with space -->
- <img src="./images/images3.jpg" height="200" width="500" alt=""
-style="border-radius: 10px;">
-<p> <a href="View Current Advisories" style="color: #FCD116;font-size:18pt;">
-    View Current Advisories</a></p>
-<a href="Explore Research Programs" style="color: #FCD116;font-size:18pt;">
-    Explore Research Programs</a>
-    <script>
-  // List your background images
-  const images = [
-    'images/img2.jpg',
-    'images/img1.jpg',
-    'images/img3.jpg',
-    'images/img5.jpg'
-  ];
 
-  let current = 0;
 
-  function changeBackground() {
-    current = (current + 1) % images.length;
-    document.body.style.backgroundImage = 
-      `linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('${images[current]}')`;
-  }
+</body>
+</html>
+    <div style="width: 95%; max-width: 1100px; margin: 0 auto; padding: 20px 0; font-family: Arial, sans-serif;">
 
-  // Change every 4 seconds
-  setInterval(changeBackground, 3000);
-</script>
-<footer class="footer">
-  <p>&copy; 2026 Uganda Virus Research Institute (UVRI) | P.O. Box 49, Entebbe, Uganda</p>
-  <p>Designed by Male Steven</p>
-</footer>
-<button> <a href="About Us.html">About Us</a></button>
-<button>  <a href="Services.html">Services</a></button>
-<button> <a href="Home.html">Home</a></button>
+  <!-- LOGO + UVRI HEADING -->
+<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+  <img src="images/image1.jpg" alt="UVRI Logo" style="width: 150px; height: 150px; object-fit: contain;">
+  <div>
+    <h1 style="margin: 0; line-height: 1;">UVRI</h1>
+    <h2 style="margin: 0; font-size: 18px;">UGANDA VIRUS RESEARCH INSTITUTE</h2>
+  </div>
+</div>
+  
+  <p style="text-align: left; font-weight: bold; margin: 20px 0;">
+    Studying the viruses that shape public health in East Africa
+  </p>
+
+  <p style="text-align: justify; line-height: 1.8; padding: 0 15px;">
+    The Uganda Virus Research Institute is a country's national reference laboratory for viral disease, <br> 
+    supporting the Ministry of Health in surveillance, diagnostics, and research into arboviral diseases, <br>
+    haemorrhagic fevers, HIV, and emerging pathogens.
+  </p>
+    <h3 style="text-align: left;">Contact Information</h3>
+  </p>
+<!-- TABLE + IMAGE SIDE BY SIDE -->
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 20px;">
+
+
+  <table style="width: 60%; border-collapse: collapse; font-family: Arial, sans-serif;">
+    <tr>
+      <th colspan="2" style="background: #1a365d; color: white; padding: 12px; text-align: left;">
+        Contact Information
+      </th>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; width: 100px;">Address:</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">Nakiwogo Road, Entebbe</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Email:</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">info@uvri.example.ug</td>
+    </tr>
+    <tr style="background: #f9f9f9;">
+      <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Phone:</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">Call 03308085456 (open Mon-Fri 8am-4pm)</td>
+    </tr>
+  </table>
+
+  <!-- RIGHT: IMAGE -->
+  <div style="width: 40%;">
+    <img src="images/images3.jpg" alt="UVRI Lab" style="width: 450px; height: 160px; border-radius: 8px; border: 1px solid #ddd;">
+  </div>
+
+</div>
+  <footer style="background: #003366; color: white; text-align: center; padding: 15px 0; width: 100%; 
+  position:relative; left: 0; right: 0; margin : 40px 0 0 0; font-family: Arial, sans-serif;">
+    © 2026 Uganda Virus Research Institute
+  </footer
 </body>
 </html>
