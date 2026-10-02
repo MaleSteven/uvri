@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UVRI</title>
-  <link rel="stylesheet" href="style.css">
+<title>UVRI</title>
 </head>
-<body>
+<body style="margin:0; font-family: Arial; background:#f5f5f5;">
 
-<div class="menu-bar">
-  <div class="logo-area">
-    <img src="images/image1.jpg" alt="Logo">
-    <h1>UGANDA VIRUS RESEARCH INSTITUTE</h1>
+<!-- GRAY MENU BAR -->
+<div style="background:gray; color:white; display:flex; align-items:center; justify-content:space-between; padding:10px 20px;">
+  <div style="display:flex; align-items:center; gap:15px;">
+    <img src="images/image1.jpg" alt="Logo" width="50" height="50" style="background:white; border-radius:50%;">
+    <h1 style="margin:0; font-size:18px;">UGANDA VIRUS RESEARCH INSTITUTE</h1>
   </div>
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+  <div style="display:flex; gap:15px;">
+    <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">Home</a>
+    <a href="about.html" style="color:white; text-decoration:none;">About Us</a>
+    <a href="services.html" style="color:white; text-decoration:none;">Services</a>
+    <a href="gallery.html" style="color:white; text-decoration:none;">Gallery</a>
+    <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
   </div>
 </div>
 
-<div class="slideshow">
-  <div class="slide slide1"></div>
-  <div class="slide slide2"></div>
-  <div class="slide slide3"></div>
-  <div class="overlay">
-    <h2>Studying the viruses that shape public health in East Africa</h2>
+<div style="padding:20px 30px;">
+  <p style="text-align:justify; font-weight:bold;">
+    Studying the viruses that shape public health in East Africa.
+  </p>
+  <p style="text-align:justify; line-height:1.8;">
+    The Uganda Virus Research Institute is a country's national reference laboratory for viral disease, 
+    supporting the Ministry of Health with surveillance, diagnostics, and research into arboviral diseases, 
+    viral haemorrhagic fevers, HIV, and emerging pathogens.
+  </p>
+
+  <h3>Contact Information</h3>
+  
+  <!-- TABLE + IMAGE SIDE BY SIDE -->
+  <div style="display:flex; gap:20px; align-items:flex-start;">
+
+    <!-- SMALL TABLE -->
+    <table border="1" cellpadding="10" cellspacing="0" style="border-collapse:collapse; width:50%; background:white; font-size:14px;">
+      <tr style="background:gray; color:white;">
+        <th style="text-align:left;">Item</th>
+        <th style="text-align:left;">Details</th>
+      </tr>
+      <tr><td>Address</td><td>Nakiwogo Road, Entebbe</td></tr>
+      <tr><td>Email</td><td>info@uvri.example.ug</td></tr>
+      <tr><td>Copyright</td><td>© 2026 UVRI</td></tr>
+      <tr><td>Phone</td><td>03308085456</td></tr>
+    </table>
+
+    <!-- IMAGE BESIDE TABLE -->
+    <img src="images/images3.jpg" alt="UVRI Lab" style="width:48%; height:200px; object-fit:cover; border-radius:8px;">
+
   </div>
+
 </div>
 
 </body>
