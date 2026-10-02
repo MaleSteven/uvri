@@ -57,8 +57,7 @@
 <div class="slideshow-overlay"></div>
 
 <!-- DARK BLUE-GRAY MENU BAR -->
-<div style="background: #0b132b; color: white; display: flex; align-items: center; justify-content:
- space-between; padding: 15px 25px; border-bottom: 2px solid #fbbf24;">
+<div style="background: #0b132b; color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 25px; border-bottom: 2px solid #fbbf24;">
   <div style="display: flex; align-items: center; gap: 20px;">
     <img src="images/image1.jpg" alt="Logo" width="100" height="100" style="background: white; border-radius: 50%;">
     <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
@@ -75,41 +74,61 @@
 <!-- PAGE CONTENT -->
 <div style="padding:20px 30px;">
 
-  <p style="text-align:justify; font-weight:bold; color: rgb(244, 244, 10); line-height:1.8;">
-    Studying the viruses that shape public health in East Africa.
-  </p>
+  <!-- NEW FLEX CONTAINER: PLACES THE FIRST PARAGRAPH BLOCK AND THE NEW COLUMN SIDE-BY-SIDE -->
+  <div style="display: flex; gap: 30px; margin-bottom: 20px;">
+    
+    <!-- Left Column: First Paragraphs -->
+    <div style="flex: 1;">
+      <p style="text-align:justify; font-weight:bold; color: rgb(244, 244, 10); line-height:1.8; margin-top: 0;">
+        Studying the viruses that shape public health in East Africa.
+      </p>
 
-  <p style="text-align:justify; line-height:1.8;">
-    The Uganda Virus Research Institute is a country’s national reference laboratory  <br>
-     for viral disease, supporting the Ministry of Health with surveillance,  <br>
-     diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV,<br>
-     and emerging pathogens.
-  </p>
+      <p style="text-align:justify; line-height:1.8; margin-bottom: 0;">
+        The Uganda Virus Research Institute is a country’s national reference laboratory  
+        for viral disease, supporting the Ministry of Health with surveillance,  
+        diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV, 
+        and emerging pathogens.
+      </p>
+    </div>
 
-  <h3 style="color: rgb(244, 244, 10);">Contact Information</h3>
+    <!-- Right Column: The New Column besides the first paragraph -->
+    <div style="flex: 1; background: rgba(30, 41, 59, 0.5); padding: 15px; border-radius: 8px; border: 1px solid rgba(251, 191, 36, 0.3);">
+      <h4 style="margin-top: 0; color: rgb(244, 244, 10); font-size: 16px;">Key Focus Areas</h4>
+      <ul style="margin: 0; padding-left: 20px; line-height: 1.6; font-size: 14px;">
+        <li>Arbovirology & Viral Hemorrhagic Fevers</li>
+        <li>Immunology & HIV Reference Testing</li>
+        <li>Epidemiological Surveillance & Diagnostics</li>
+        <li>Emerging Pathogen Outbreak Response</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CONTACT SECTION (UNCHANGED LAYOUT) -->
+  <h3 style="color: rgb(244, 244, 10); margin-top: 30px;">Contact Information</h3>
   <div style="display:flex; gap:20px; align-items:flex-start;">
     <table border="0" cellpadding="12" cellspacing="0" style="border-collapse: separate; border-spacing: 0; width: 50%; background: #1e293b; color: #f8fafc; font-size: 14px; border-radius: 8px; overflow: hidden; border: 2px solid #fbbf24;">
-  <!-- Header Row -->
-  <tr style="background: #334155;">
-    <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; color: #fbbf24;">Item</th>
-    <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; color: #fbbf24;">Details</th>
-  </tr>
-  <!-- Address Row -->
-  <tr>
-    <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Address</td>
-    <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24;">Nakiwogo Road, Entebbe</td>
-  </tr>
-  <!-- Email Row -->
-  <tr>
-    <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Email</td>
-    <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24; color: #38bdf8;">info@uvri.example.ug</td>
-  </tr>
-  <!-- Phone Row -->
-  <tr>
-    <td style="font-weight: bold; padding: 12px 16px; border-right: 2px solid #fbbf24; background: #111827;">Phone</td>
-    <td style="padding: 12px 16px;">03308085456</td>
-  </tr>
-</table>
+      <!-- Header Row -->
+      <tr style="background: #334155;">
+        <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; color: #fbbf24;">Item</th>
+        <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; color: #fbbf24;">Details</th>
+      </tr>
+      <!-- Address Row -->
+      <tr>
+        <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Address</td>
+        <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24;">Nakiwogo Road, Entebbe</td>
+      </tr>
+      <!-- Email Row -->
+      <tr>
+        <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Email</td>
+        <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24; color: #38bdf8;">info@uvri.example.ug</td>
+      </tr>
+      <!-- Phone Row -->
+      <tr>
+        <td style="font-weight: bold; padding: 12px 16px; border-right: 2px solid #fbbf24; background: #111827;">Phone</td>
+        <td style="padding: 12px 16px;">03308085456</td>
+      </tr>
+    </table>
     <img src="images/images3.jpg" alt="UVRI" style="width:48%; height:200px; object-fit:cover; border-radius:8px;">
   </div>
 
