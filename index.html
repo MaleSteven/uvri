@@ -41,15 +41,30 @@
     z-index: -1;
   }
 
-  /* Interactive Navigation Link Styling */
-  .nav-links a {
-    color: rgb(244, 244, 10); 
-    text-decoration: none;
-    transition: color 0.2s ease, text-decoration 0.2s ease; /* Creates a smooth transition effect */
+  /* Interactive Navigation Link & Radio Styling */
+  .nav-links {
+    display: flex; 
+    gap: 25px; 
+    font-size: 18px; 
+    font-weight: bold;
   }
 
-  /* Highlight effect when mouse hovers over menu links */
-  .nav-links a:hover {
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  /* Style the text label next to the radio button */
+  .nav-item label {
+    color: rgb(244, 244, 10); 
+    cursor: pointer;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+  }
+
+  /* Highlight effect when mouse hovers over menu item */
+  .nav-item:hover label {
     color: white !important; 
     text-decoration: underline !important;
   }
@@ -59,7 +74,6 @@
 
 <!-- BACKGROUND SLIDESHOW CONTAINER -->
 <div class="slideshow-container">
-  <!-- Replace these paths with your actual background images (e.g., images/bg1.jpg) -->
   <div class="slide active" style="background-image: url('images/img1.jpg');"></div>
   <div class="slide" style="background-image: url('images/img2.jpg');"></div>
   <div class="slide" style="background-image: url('images/img3.jpg');"></div>
@@ -75,13 +89,38 @@
     <img src="images/image1.jpg" alt="Logo" width="100" height="100" style="background: white; border-radius: 50%;">
     <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
   </div>
-  <!-- Applied the nav-links class to control hover dynamics cleanly -->
-  <div class="nav-links" style="display: flex; gap: 25px; font-size: 18px; font-weight: bold;">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+  
+  <!-- NAV LINKS CONVERTED TO RADIO BUTTON GROUPS -->
+  <div class="nav-links">
+    <!-- Home (Checked by default on index page) -->
+    <div class="nav-item" onclick="window.location.href='index.html';">
+      <input type="radio" id="radio-home" name="nav-menu" checked>
+      <label for="radio-home">Home</label>
+    </div>
+    
+    <!-- About Us -->
+    <div class="nav-item" onclick="window.location.href='about.html';">
+      <input type="radio" id="radio-about" name="nav-menu">
+      <label for="radio-about">About Us</label>
+    </div>
+    
+    <!-- Services -->
+    <div class="nav-item" onclick="window.location.href='services.html';">
+      <input type="radio" id="radio-services" name="nav-menu">
+      <label for="radio-services">Services</label>
+    </div>
+    
+    <!-- Gallery -->
+    <div class="nav-item" onclick="window.location.href='gallery.html';">
+      <input type="radio" id="radio-gallery" name="nav-menu">
+      <label for="radio-gallery">Gallery</label>
+    </div>
+    
+    <!-- Contact -->
+    <div class="nav-item" onclick="window.location.href='contact.html';">
+      <input type="radio" id="radio-contact" name="nav-menu">
+      <label for="radio-contact">Contact</label>
+    </div>
   </div>
 </div>
 
@@ -105,7 +144,7 @@
       </p>
     </div>
 
-    <!-- Right Column: Key Focus Areas (Now free of borders and backgrounds) -->
+    <!-- Right Column: Key Focus Areas -->
     <div style="flex: 1;">
       <h4 style="margin-top: 0; color: rgb(244, 244, 10); font-size: 16px;">Key Focus Areas</h4>
       <ul style="margin: 0; padding-left: 20px; line-height: 1.8; font-size: 14px;">
@@ -122,22 +161,18 @@
   <h3 style="color: rgb(244, 244, 10); margin-top: 30px;">Contact Information</h3>
   <div style="display:flex; gap:20px; align-items:flex-start;">
     <table border="0" cellpadding="12" cellspacing="0" style="border-collapse: separate; border-spacing: 0; width: 50%; background: #1e293b; color: #f8fafc; font-size: 14px; border-radius: 8px; overflow: hidden; border: 2px solid #fbbf24;">
-      <!-- Header Row -->
       <tr style="background: #334155;">
         <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; color: #fbbf24;">Item</th>
         <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; color: #fbbf24;">Details</th>
       </tr>
-      <!-- Address Row -->
       <tr>
         <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Address</td>
         <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24;">Nakiwogo Road, Entebbe</td>
       </tr>
-      <!-- Email Row -->
       <tr>
         <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Email</td>
         <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24; color: #38bdf8;">info@uvri.example.ug</td>
       </tr>
-      <!-- Phone Row -->
       <tr>
         <td style="font-weight: bold; padding: 12px 16px; border-right: 2px solid #fbbf24; background: #111827;">Phone</td>
         <td style="padding: 12px 16px;">03308085456</td>
@@ -152,7 +187,7 @@
 <script>
   const slides = document.querySelectorAll('.slide');
   let currentSlideIndex = 0;
-  const slideInterval = 5000; // Rotates every 5 seconds
+  const slideInterval = 5000;
 
   function nextSlide() {
     slides[currentSlideIndex].classList.remove('active');
@@ -165,25 +200,17 @@
 
 <!-- DARK BLUE-GRAY FOOTER BAR -->
 <div style="background: #0b132b; color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; border-top: 2px solid #fbbf24; margin-top: 40px;">
-  
-  <!-- Left Side: Copyright / Institutional text -->
   <div style="font-size: 14px; opacity: 0.8;">
     &copy; 2026 Uganda Virus Research Institute (UVRI). All Rights Reserved.
   </div>
-  
-  <!-- Right Side: Action Buttons -->
   <div style="display: flex; gap: 15px;">
-    <!-- Button 1: Quick Links -->
     <button onclick="alert('Report an outbreak...')" style="background: #1e293b; color: white; border: 1px solid #fbbf24; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s;">
       Report an outbreak
     </button>
-    
-    <!-- Button 2: Portal Login -->
     <button onclick="alert('Explore research programs...')" style="background: #fbbf24; color: #0b132b; border: none; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s;">
       Research programs
     </button>
   </div>
-
 </div>
 </body>
 </html>
