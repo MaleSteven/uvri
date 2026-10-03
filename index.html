@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* Places the slides behind all text and tables */
   }
 
   /* Core slide styling */
@@ -21,8 +21,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1.5s ease-in-out; /* Smooth transition */
   }
 
   /* Active slide fades in */
@@ -30,81 +30,43 @@
     opacity: 1;
   }
 
-  /* Semi-dark overlay tint */
+  /* Semi-dark overlay tint to make white text pop on bright background images */
   .slideshow-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 11, 43, 0.7);
+    background: rgba(3, 11, 43, 0.7); /* Matching your original #030b2b color with 70% opacity */
     z-index: -1;
   }
 
   /* Interactive Navigation Link & Radio Styling */
   .nav-links {
     display: flex; 
-    gap: 15px; 
+    gap: 25px; 
+    font-size: 18px; 
+    font-weight: bold;
   }
 
   .nav-item {
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
   }
 
-  /* HIDE THE DEFAULT RADIO CIRCLE COMPLETELY */
-  .nav-item input[type="radio"] {
-    display: none;
-  }
-
-  /* STYLE THE IMAGE BUTTONS */
-  .nav-btn-img {
-    width: 70px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 2px solid transparent;
-    opacity: 0.6; /* Dim unselected items slightly */
-    transition: all 0.2s ease-in-out;
+  /* Style the text label next to the radio button */
+  .nav-item label {
+    color: rgb(244, 244, 10); 
     cursor: pointer;
-    display: block;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
   }
 
-  /* Hover effect for image buttons */
-  .nav-item:hover .nav-btn-img {
-    opacity: 0.9;
-    border-color: white;
-  }
-
-  /* VISUAL INDICATOR FOR THE SELECTED / ACTIVE RADIO IMAGE */
-  .nav-item input[type="radio"]:checked + .nav-btn-img {
-    opacity: 1;
-    border-color: #fbbf24; /* Yellow border matching your theme */
-    box-shadow: 0 0 8px #fbbf24;
-  }
-
-  /* TOOLTIP POPUP FOR BUTTON NAMES */
-  .nav-item::after {
-    content: attr(data-title);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #0b132b;
-    color: #fbbf24;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 4px;
-    border: 1px solid #fbbf24;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .nav-item:hover::after {
-    opacity: 1;
+  /* Highlight effect when mouse hovers over menu item */
+  .nav-item:hover label {
+    color: white !important; 
+    text-decoration: underline !important;
   }
 </style>
 </head>
@@ -128,46 +90,36 @@
     <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
   </div>
   
-  <!-- IMAGES ACTING AS THE RADIO BUTTON NAVIGATION -->
+  <!-- NAV LINKS CONVERTED TO RADIO BUTTON GROUPS -->
   <div class="nav-links">
     <!-- Home (Checked by default on index page) -->
-    <div class="nav-item" data-title="Home" onclick="window.location.href='index.html';">
+    <div class="nav-item" onclick="window.location.href='index.html';">
       <input type="radio" id="radio-home" name="nav-menu" checked>
-      <label for="radio-home">
-        <img src="images/img1.jpg" alt="Home" class="nav-btn-img">
-      </label>
+      <label for="radio-home">Home</label>
     </div>
     
     <!-- About Us -->
-    <div class="nav-item" data-title="About Us" onclick="window.location.href='about.html';">
+    <div class="nav-item" onclick="window.location.href='about.html';">
       <input type="radio" id="radio-about" name="nav-menu">
-      <label for="radio-about">
-        <img src="images/img2.jpg" alt="About Us" class="nav-btn-img">
-      </label>
+      <label for="radio-about">About Us</label>
     </div>
     
     <!-- Services -->
-    <div class="nav-item" data-title="Services" onclick="window.location.href='services.html';">
+    <div class="nav-item" onclick="window.location.href='services.html';">
       <input type="radio" id="radio-services" name="nav-menu">
-      <label for="radio-services">
-        <img src="images/img3.jpg" alt="Services" class="nav-btn-img">
-      </label>
+      <label for="radio-services">Services</label>
     </div>
     
     <!-- Gallery -->
-    <div class="nav-item" data-title="Gallery" onclick="window.location.href='gallery.html';">
+    <div class="nav-item" onclick="window.location.href='gallery.html';">
       <input type="radio" id="radio-gallery" name="nav-menu">
-      <label for="radio-gallery">
-        <img src="images/img5.jpg" alt="Gallery" class="nav-btn-img">
-      </label>
+      <label for="radio-gallery">Gallery</label>
     </div>
     
     <!-- Contact -->
-    <div class="nav-item" data-title="Contact" onclick="window.location.href='contact.html';">
+    <div class="nav-item" onclick="window.location.href='contact.html';">
       <input type="radio" id="radio-contact" name="nav-menu">
-      <label for="radio-contact">
-        <img src="images/images3.jpg" alt="Contact" class="nav-btn-img">
-      </label>
+      <label for="radio-contact">Contact</label>
     </div>
   </div>
 </div>
@@ -187,7 +139,7 @@
       <p style="text-align:justify; line-height:1.8; margin-bottom: 0;">
         The Uganda Virus Research Institute is a country’s national reference laboratory  
         for viral disease, supporting the Ministry of Health with surveillance,  
-        diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV,  
+        diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV, 
         and emerging pathogens.
       </p>
     </div>
