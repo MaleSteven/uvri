@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Places the slides behind all text and tables */
+    z-index: -1;
   }
 
   /* Core slide styling */
@@ -21,8 +21,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 1.5s ease-in-out; /* Smooth transition */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
   }
 
   /* Active slide fades in */
@@ -30,43 +30,89 @@
     opacity: 1;
   }
 
-  /* Semi-dark overlay tint to make white text pop on bright background images */
+  /* Semi-dark overlay tint */
   .slideshow-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 11, 43, 0.7); /* Matching your original #030b2b color with 70% opacity */
+    background: rgba(3, 11, 43, 0.7);
     z-index: -1;
   }
 
   /* Interactive Navigation Link & Radio Styling */
   .nav-links {
     display: flex; 
-    gap: 25px; 
-    font-size: 18px; 
-    font-weight: bold;
+    gap: 20px; 
   }
 
   .nav-item {
+    position: relative;
+    cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    cursor: pointer;
   }
 
-  /* Style the text label next to the radio button */
-  .nav-item label {
-    color: rgb(244, 244, 10); 
-    cursor: pointer;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+  /* HIDE THE DEFAULT RADIO CIRCLE COMPLETELY */
+  .nav-item input[type="radio"] {
+    display: none;
   }
 
-  /* Highlight effect when mouse hovers over menu item */
-  .nav-item:hover label {
-    color: white !important; 
-    text-decoration: underline !important;
+  /* STYLE THE CONTEXT-SPECIFIC NAV IMAGE BUTTONS */
+  .nav-btn-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%; /* Keeps icons in matching round frames */
+    border: 2px solid rgba(251, 191, 36, 0.3); /* Initial faint yellow border */
+    background: #1e293b; /* Distinct background backing for PNG transparency clarity */
+    padding: 8px;
+    opacity: 0.65;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    display: block;
+  }
+
+  /* Hover effect for icon image buttons */
+  .nav-item:hover .nav-btn-img {
+    opacity: 0.95;
+    border-color: white;
+    transform: scale(1.05);
+  }
+
+  /* VISUAL INDICATOR FOR THE SELECTED / ACTIVE RADIO IMAGE */
+  .nav-item input[type="radio"]:checked + label .nav-btn-img {
+    opacity: 1;
+    border-color: #fbbf24; /* Firm yellow border matching the layout line theme */
+    background: #fbbf24; /* Solid fill background swap to explicitly highlight selected item */
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+  }
+
+  /* TOOLTIP POPUP FOR BUTTON NAMES */
+  .nav-item::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0b132b;
+    color: #fbbf24;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: 1px solid #fbbf24;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+
+  .nav-item:hover::after {
+    opacity: 1;
   }
 </style>
 </head>
@@ -90,36 +136,46 @@
     <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
   </div>
   
-  <!-- NAV LINKS CONVERTED TO RADIO BUTTON GROUPS -->
+  <!-- IMAGES ACTING AS THE THEMATIC RADIO BUTTON NAVIGATION -->
   <div class="nav-links">
-    <!-- Home (Checked by default on index page) -->
-    <div class="nav-item" onclick="window.location.href='index.html';">
+    <!-- Home (Using an Institute HQ Campus / Building Icon) -->
+    <div class="nav-item" data-title="Home" onclick="window.location.href='index.html';">
       <input type="radio" id="radio-home" name="nav-menu" checked>
-      <label for="radio-home">Home</label>
+      <label for="radio-home">
+        <img src="images/icons/home-hq.png" alt="Home" class="nav-btn-img">
+      </label>
     </div>
     
-    <!-- About Us -->
-    <div class="nav-item" onclick="window.location.href='about.html';">
+    <!-- About Us (Using a Scientific Microscope Research Icon) -->
+    <div class="nav-item" data-title="About Us" onclick="window.location.href='about.html';">
       <input type="radio" id="radio-about" name="nav-menu">
-      <label for="radio-about">About Us</label>
+      <label for="radio-about">
+        <img src="images/icons/about-microscope.png" alt="About Us" class="nav-btn-img">
+      </label>
     </div>
     
-    <!-- Services -->
-    <div class="nav-item" onclick="window.location.href='services.html';">
+    <!-- Services (Using Diagnostic Laboratory Test Tubes Icon) -->
+    <div class="nav-item" data-title="Services" onclick="window.location.href='services.html';">
       <input type="radio" id="radio-services" name="nav-menu">
-      <label for="radio-services">Services</label>
+      <label for="radio-services">
+        <img src="images/icons/services-lab.png" alt="Services" class="nav-btn-img">
+      </label>
     </div>
     
-    <!-- Gallery -->
-    <div class="nav-item" onclick="window.location.href='gallery.html';">
+    <!-- Gallery (Using a Media Photo Albums Grid Icon) -->
+    <div class="nav-item" data-title="Gallery" onclick="window.location.href='gallery.html';">
       <input type="radio" id="radio-gallery" name="nav-menu">
-      <label for="radio-gallery">Gallery</label>
+      <label for="radio-gallery">
+        <img src="images/icons/gallery-media.png" alt="Gallery" class="nav-btn-img">
+      </label>
     </div>
     
-    <!-- Contact -->
-    <div class="nav-item" onclick="window.location.href='contact.html';">
+    <!-- Contact (Using an Envelope Mail & Telecommunication Phone Icon) -->
+    <div class="nav-item" data-title="Contact" onclick="window.location.href='contact.html';">
       <input type="radio" id="radio-contact" name="nav-menu">
-      <label for="radio-contact">Contact</label>
+      <label for="radio-contact">
+        <img src="images/icons/contact-comms.png" alt="Contact" class="nav-btn-img">
+      </label>
     </div>
   </div>
 </div>
@@ -139,7 +195,7 @@
       <p style="text-align:justify; line-height:1.8; margin-bottom: 0;">
         The Uganda Virus Research Institute is a country’s national reference laboratory  
         for viral disease, supporting the Ministry of Health with surveillance,  
-        diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV, 
+        diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV,  
         and emerging pathogens.
       </p>
     </div>
@@ -207,10 +263,3 @@
     <button onclick="alert('Report an outbreak...')" style="background: #1e293b; color: white; border: 1px solid #fbbf24; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s;">
       Report an outbreak
     </button>
-    <button onclick="alert('Explore research programs...')" style="background: #fbbf24; color: #0b132b; border: none; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s;">
-      Research programs
-    </button>
-  </div>
-</div>
-</body>
-</html>
