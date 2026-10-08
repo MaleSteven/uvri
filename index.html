@@ -11,6 +11,8 @@
     width: 100%;
     height: 100%;
     z-index: -1; /* Places the slides behind all text and tables */
+    margin: 0;
+    padding: 0;
   }
 
   /* Core slide styling */
@@ -21,13 +23,41 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 1.5s ease-in-out; /* Smooth transition */
+    opacity: 0; /* Hidden by default, controlled by keyframes */
+    animation: crossFade 15s infinite ease-in-out;
   }
 
-  /* Active slide fades in */
-  .slide.active {
-    opacity: 1;
+  /* 
+    ANIMATION TIMING CALCULATION (Total Duration: 15s for 3 images)
+    Each image gets 5s total space.
+    Slide 1: starts immediately (0s delay)
+    Slide 2: delays by 5s
+    Slide 3: delays by 10s
+  */
+  .slide:nth-child(1) {
+    background-image: url('images/img1.jpg');
+    animation-delay: 0s;
+  }
+  .slide:nth-child(2) {
+    background-image: url('images/img2.jpg');
+    animation-delay: 5s;
+  }
+  .slide:nth-child(3) {
+    background-image: url('images/img3.jpg');
+    animation-delay: 10s;
+  }
+
+  /* 
+    PURE CSS ANIMATION KEYFRAMES
+    0% to 10% -> Fades in and stays visible (approx 1.5s fade + visibility)
+    33% to 43% -> Fades out as the next image takes over
+  */
+  @keyframes crossFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33.33% { opacity: 1; }
+    43.33% { opacity: 0; }
+    100% { opacity: 0; }
   }
 
   /* Semi-dark overlay tint to make white text pop on bright background images */
@@ -47,6 +77,9 @@
     gap: 25px; 
     font-size: 18px; 
     font-weight: bold;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
   }
 
   .nav-item {
@@ -68,136 +101,50 @@
     color: white !important; 
     text-decoration: underline !important;
   }
+
+  /* Main content layout container */
+  .content-container {
+    position: relative;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 5;
+  }
 </style>
 </head>
 <body style="margin:0; font-family: Arial; background:#030b2b; color:white;">
 
 <!-- BACKGROUND SLIDESHOW CONTAINER -->
 <div class="slideshow-container">
-  <div class="slide active" style="background-image: url('images/img1.jpg');"></div>
-  <div class="slide" style="background-image: url('images/img2.jpg');"></div>
-  <div class="slide" style="background-image: url('images/img3.jpg');"></div>
-  <div class="slide" style="background-image: url('images/img5.jpg');"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
 </div>
 
-<!-- TINT OVERLAY FOR TEXT READABILITY -->
+<!-- SEMI-DARK OVERLAY TINT -->
 <div class="slideshow-overlay"></div>
 
-<!-- DARK BLUE-GRAY MENU BAR -->
-<div style="background: #0b132b; color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 25px; border-bottom: 2px solid #fbbf24;">
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <img src="images/image1.jpg" alt="Logo" width="100" height="100" style="background: white; border-radius: 50%;">
-    <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
+<!-- NAVIGATION BAR -->
+<div class="nav-links">
+  <div class="nav-item">
+    <input type="radio" id="nav1" name="nav-group" checked>
+    <label for="nav1">Home</label>
   </div>
-  
-  <!-- NAV LINKS CONVERTED TO RADIO BUTTON GROUPS -->
-  <div class="nav-links">
-    <!-- Home (Checked by default on index page) -->
-    <div class="nav-item" onclick="window.location.href='index.html';">
-      <input type="radio" id="radio-home" name="nav-menu" checked>
-      <label for="radio-home">Home🏠</label>
-    </div>
-    
-    <!-- About Us -->
-    <div class="nav-item" onclick="window.location.href='about.html';">
-      <input type="radio" id="radio-about" name="nav-menu">
-      <label for="radio-about">About Us🫡</label>
-    </div>
-    
-    <!-- Services -->
-    <div class="nav-item" onclick="window.location.href='services.html';">
-      <input type="radio" id="radio-services" name="nav-menu">
-      <label for="radio-services">Services🚒</label>
-    </div>
-    
-    <!-- Gallery -->
-    <div class="nav-item" onclick="window.location.href='gallery.html';">
-      <input type="radio" id="radio-gallery" name="nav-menu">
-      <label for="radio-gallery">Gallery🖼️</label>
-    </div>
-    
-    <!-- Contact -->
-    <div class="nav-item" onclick="window.location.href='contact.html';">
-      <input type="radio" id="radio-contact" name="nav-menu">
-      <label for="radio-contact">Contact📲</label>
-    </div>
+  <div class="nav-item">
+    <input type="radio" id="nav2" name="nav-group">
+    <label for="nav2">Research</label>
+  </div>
+  <div class="nav-item">
+    <input type="radio" id="nav3" name="nav-group">
+    <label for="nav3">About UVRI</label>
   </div>
 </div>
 
-<!-- PAGE CONTENT -->
-<div style="padding:20px 30px;">
-
-  <!-- FLEX CONTAINER FOR SIDE-BY-SIDE COLUMNS -->
-  <div style="display: flex; gap: 30px; margin-bottom: 20px;">
-    
-    <!-- Left Column: First Paragraphs -->
-    <div style="flex: 1;">
-      <p style="text-align:justify; font-weight:bold; color: rgb(244, 244, 10); line-height:1.8; margin-top: 0;">
-        Studying the viruses that shape public health in East Africa.
-      </p>
-
-      <p style="text-align:justify; line-height:1.8; margin-bottom: 0;">
-        The Uganda Virus Research Institute is a country’s national reference laboratory  
-        for viral disease, supporting the Ministry of Health with surveillance,  
-        diagnostics, and research into arboviral diseases, viral haemorrhagic fevers, HIV, 
-        and emerging pathogens.
-      </p>
-    </div>
-
-    <!-- Right Column: Key Focus Areas -->
-    <div style="flex: 1;">
-      <h4 style="margin-top: 0; color: rgb(244, 244, 10); font-size: 16px;">Key Focus Areas</h4>
-      <ul style="margin: 0; padding-left: 20px; line-height: 1.8; font-size: 14px;">
-        <li>Arbovirology & Viral Hemorrhagic Fevers</li>
-        <li>Immunology & HIV Reference Testing</li>
-        <li>Epidemiological Surveillance & Diagnostics</li>
-        <li>Emerging Pathogen Outbreak Response</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- CONTACT SECTION -->
-  <h3 style="color: rgb(244, 244, 10); margin-top: 30px;">Contact Information</h3>
-  <div style="display:flex; gap:20px; align-items:flex-start;">
-    <table border="0" cellpadding="12" cellspacing="0" style="border-collapse: separate; border-spacing: 0; width: 50%; background: #1e293b; color: #f8fafc; font-size: 14px; border-radius: 8px; overflow: hidden; border: 2px solid #fbbf24;">
-      <tr style="background: #334155;">
-        <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; color: #fbbf24;">Item</th>
-        <th style="text-align: left; font-weight: bold; padding: 14px 16px; border-bottom: 2px solid #fbbf24; color: #fbbf24;">Details</th>
-      </tr>
-      <tr>
-        <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Address</td>
-        <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24;">Nakiwogo Road, Entebbe</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold; padding: 12px 16px; border-bottom: 2px solid #fbbf24; border-right: 2px solid #fbbf24; background: #111827;">Email</td>
-        <td style="padding: 12px 16px; border-bottom: 2px solid #fbbf24; color: #38bdf8;">info@uvri.example.ug</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold; padding: 12px 16px; border-right: 2px solid #fbbf24; background: #111827;">Phone</td>
-        <td style="padding: 12px 16px;">03308085456</td>
-      </tr>
-    </table>
-    <img src="images/images3.jpg" alt="UVRI" style="width:48%; height:200px; object-fit:cover; border-radius:8px;">
-  </div>
-
+<!-- MAIN PAGE CONTENT -->
+<div class="content-container">
+  <h1>Uganda Virus Research Institute (UVRI)</h1>
+  <p>Welcome to the official portal. This interface features a responsive background slider transitioning smoothly using pure CSS animations.</p>
 </div>
 
-
-
-<!-- DARK BLUE-GRAY FOOTER BAR -->
-<div style="background: #0b132b; color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; border-top: 2px solid #fbbf24; margin-top: 40px;">
-  <div style="font-size: 14px; opacity: 0.8;">
-    &copy; 2026 Uganda Virus Research Institute (UVRI). All Rights Reserved.
-  </div>
-  <div style="display: flex; gap: 15px;">
-    <button onclick="alert('Report an outbreak...')" style="background: #1e293b; color: white; border: 1px solid #fbbf24; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s;">
-      Report an outbreak
-    </button>
-    <button onclick="alert('Explore research programs...')" style="background: #fbbf24; color: #0b132b; border: none; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s;">
-      Research programs
-    </button>
-  </div>
-</div>
 </body>
 </html>
