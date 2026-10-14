@@ -34,54 +34,139 @@
   .map-row { flex-direction: column; }
 }
 
-/* Reset margins */
+/* Page setup */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-/* Navigation Container */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fafafa;
+}
+
+/* Header & Menu Bar */
+header {
+    background-color: #004080;
+    padding: 14px 25px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004080; /* Primary UVRI Blue */
-    padding: 15px 30px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* Logo Styling */
-.navbar .logo {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Remove list bullet points and line up links horizontally */
-.nav-links {
-    list-style: none;
+.logo-area {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 12px;
 }
 
-/* Link Styles */
+.logo-area img {
+    height: 42px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.logo-area h1 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+}
+
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 14px;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease-in-out;
 }
 
-/* Hover Effect */
-.nav-links a:hover {
-    background-color: #002b55;
-    color: #ffffff;
-}
-/* Active Page Highlight (Optional) */
+.nav-links a:hover,
 .nav-links a.active {
     background-color: #002b55;
-    border-bottom: 2px solid #ffffff;
+}
+
+/* Main Content Area */
+main {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 20px;
+    background-color: #ffffff;
+}
+
+h2 {
+    font-size: 26px;
+    color: #004080;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #222;
+    margin: 25px 0 10px;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+/* Institute Record Table */
+table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+    margin: 15px 0 20px;
+}
+
+th, td {
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #004080;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Content Images */
+main img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 18px 0;
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
 }
