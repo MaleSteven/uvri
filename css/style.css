@@ -80,3 +80,8 @@
     background-color: #002b55;
     color: #ffffff;
 }
+/* Active Page Highlight (Optional) */
+.nav-links a.active {
+    background-color: #002b55;
+    border-bottom: 2px solid #ffffff;
+}
