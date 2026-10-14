@@ -33,3 +33,48 @@
 @media (max-width: 700px) {
   .map-row { flex-direction: column; }
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navigation Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004080; /* Primary UVRI Blue */
+    padding: 15px 30px;
+}
+
+/* Logo Styling */
+.navbar .logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Remove list bullet points and line up links horizontally */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Link Styles */
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    background-color: #002b55;
+    color: #ffffff;
+}
