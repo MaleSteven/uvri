@@ -36,3 +36,54 @@
 body {
   background-color: #0b132b;
 }
+/* Header Container */
+.main-header {
+  background-color: #003366; /* Deep blue theme */
+  color: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-container h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* Navigation Menu Styles */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Lines up navigation items horizontally */
+  gap: 10px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 16px;
+  display: block;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover & Active Page Highlights */
+.navbar a:hover,
+.navbar a.active {
+  background-color: #0055a5; /* Slightly brighter blue for hover/active state */
+}
