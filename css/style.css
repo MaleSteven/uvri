@@ -34,9 +34,5 @@
   .map-row { flex-direction: column; }
 }
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
   background-color: #0b132b;
 }
