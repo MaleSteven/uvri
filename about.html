@@ -8,14 +8,16 @@
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Header & Navigation Menu Bar -->
     <header>
-        <img src="images/logo.jpg" alt="UVRI Logo">
-        <h1>Uganda Virus Research Institute</h1>
-        <nav>
+        <div class="header-container">
+            <img src="images/logo.jpg" alt="UVRI Logo" class="logo">
+            <h1>Uganda Virus Research Institute</h1>
+        </div>
+        <nav class="menu-bar">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
@@ -27,85 +29,72 @@
         <!-- Main About Us Section -->
         <section>
             <h2>About Us</h2>
+            
             <!-- Institute Record Table Section -->
-<section>
-    <h3>Institute Record</h3>
-    <p>The Uganda Virus Research Institute (UVRI) is a government biomedical research center in Entebbe, Uganda,
-         focused on viral diseases, public health surveillance, and diagnostic testing.
-        </p>
-        <p><strong>Mandate:</strong> Conducts basic and applied research on communicable and viral diseases (such as HIV/AIDS, Ebola,
-             Marburg, yellow fever, Zika, and influenza), advises the Ministry of Health, and manages clinical trials.
-            </p>
-            <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/PDB_MNQ5sBk" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-</iframe>
-    <table border="1">
-     <thead>
-     <tr>
-     <th>Category</th>
-    <th>Details</th>
-     </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><strong>Founded</strong></td>
-    <td>1937</td>
-    </tr>
-    <tr>
-    <td><strong>Location</strong></td>
-    <td>Entebbe, Uganda</td>
-    </tr>
-    <tr>
-    <td><strong>Oversight</strong></td>
-    <td>Ministry of Health</td>
-     </tr>
-     <tr>
-    <td><strong>Designation</strong></td>
-    <td>WHO Collaborating Centre</td>
-    </tr>
-    </tbody>
-    </table>
-</section>
-<img src="images/img13.jpg" width="1200" height="500" alt="">
-<h3>Project Brief</h3>
-     <p><strong>Vision</strong> To be a world-class center of excellence in viral
-         and health research
-    </p>
-    <p><strong>Mission</strong>To conduct scientific investigations on viral
-         diseases, contribute to knowledge, innovation, policy, practice,
-          and capacity strengthening.
-        </p>
-        <p><strong>Goal</strong>To contribute to the reduction of the viral disease 
-            burden for improved public health and security.
-        </p>
-        <p><strong>Core values</strong>Professionalism, Ethics, Effectiveness, and Teamwork:
-             Maintaining high standards of competence, integrity, quality,
-              and collaboration across all research and service delivery.
-            </p>
-            <img src="images/img11.jpg" width="1200" height="500" alt="">
+            <section>
+                <h3>Institute Record</h3>
+                <p>The Uganda Virus Research Institute (UVRI) is a government biomedical research center in Entebbe, Uganda, focused on viral diseases, public health surveillance, and diagnostic testing.</p>
+                <p><strong>Mandate:</strong> Conducts basic and applied research on communicable and viral diseases (such as HIV/AIDS, Ebola, Marburg, yellow fever, Zika, and influenza), advises the Ministry of Health, and manages clinical trials.</p>
+                
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/PDB_MNQ5sBk" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Founded</strong></td>
+                            <td>1937</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td>Entebbe, Uganda</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oversight</strong></td>
+                            <td>Ministry of Health</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Designation</strong></td>
+                            <td>WHO Collaborating Centre</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <img src="images/img13.jpg" width="1200" height="500" alt="UVRI Campus Overview">
+            
+            <h3>Project Brief</h3>
+            <p><strong>Vision:</strong> To be a world-class center of excellence in viral and health research.</p>
+            <p><strong>Mission:</strong> To conduct scientific investigations on viral diseases, contribute to knowledge, innovation, policy, practice, and capacity strengthening.</p>
+            <p><strong>Goal:</strong> To contribute to the reduction of the viral disease burden for improved public health and security.</p>
+            <p><strong>Core values:</strong> Professionalism, Ethics, Effectiveness, and Teamwork: Maintaining high standards of competence, integrity, quality, and collaboration across all research and service delivery.</p>
+            
+            <img src="images/img11.jpg" width="1200" height="500" alt="Research Lab">
+            
             <h3>Core Objectives</h3>
-            <p><strong>Scientific Investigation: </strong>Conduct robust research on viral and other 
-                communicable diseases.
-            </p>
-            <p><strong>Knowledge &Innovation: </strong>Contribute to scientific knowledge, innovations, 
-                and evidence-based health policy and practice.
-            </p>
-            <p><strong>Capacity Strengthening: </strong>Build and maintain a skilled workforce and
-                 infrastructure for effective research and service delivery.
-            </p>
-            <img src="images/img10.jpg" width="500" height="300" alt="">
-            <p><strong>Milestones:</strong> Famous for isolating the Zika virus in 1947 and marking 
-                its 90th anniversary while being designated as the East African Community Regional Center of 
-                Excellence for Virology.
-            </p>
-            <p><strong>Key Partnership:</strong> Collaborates closely with the <a href="">MRC / UVRI and 
-                LSHTM Uganda Research Unit</a> and international public health bodies.
-            </p>
+            <p><strong>Scientific Investigation: </strong>Conduct robust research on viral and other communicable diseases.</p>
+            <p><strong>Knowledge & Innovation: </strong>Contribute to scientific knowledge, innovations, and evidence-based health policy and practice.</p>
+            <p><strong>Capacity Strengthening: </strong>Build and maintain a skilled workforce and infrastructure for effective research and service delivery.</p>
+            
+            <img src="images/img10.jpg" width="500" height="300" alt="Researchers">
+            
+            <p><strong>Milestones:</strong> Famous for isolating the Zika virus in 1947 and marking its 90th anniversary while being designated as the East African Community Regional Center of Excellence for Virology.</p>
+            <p><strong>Key Partnership:</strong> Collaborates closely with the <a href="">MRC / UVRI and LSHTM Uganda Research Unit</a> and international public health bodies.</p>
+        </section>
+    </main>
+
 </body>
 </html>
