@@ -17,33 +17,40 @@
 <div class="slideshow-overlay"></div>
 <div style="background: #0b132b; color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 25px; border-bottom: 2px solid #fbbf24;">
   <div style="display: flex; align-items: center; gap: 20px;">
-    <img src="images/logo.png" alt="Logo" width="150" height="150" style="background: white; border-radius: 50%;">
+    <img src="images/logo.png" alt="Logo" width="10" height="150" style="background: white; border-radius: 50%;">
     <h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; color: rgb(244, 244, 10);">UGANDA VIRUS RESEARCH INSTITUTE</h1>
   </div>
   
-   <nav style="margin-left: auto;">
-                <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
-                    <li><a href="index.html" onmouseover="this.style.color='#fef08a'; this.style.backgroundColor='#334155';" 
-                        onmouseout="this.style.color='#facc15'; this.style.backgroundColor='transparent';" style="color:
-                         #facc15; text-decoration: none; font-weight: 600; padding: 10px 16px; border-radius: 6px; 
-                         transition: all 0.2s;">Home</a></li>
-                    <li><a href="about.html" style="color: #0f172a; background-color: #facc15; text-decoration: none;
-                     font-weight: 700; padding: 10px 16px; border-radius: 6px;">About Us</a></li>
-                    <li><a href="Services.html" onmouseover="this.style.color='#fef08a'; this.style.backgroundColor='#334155';" 
-                        onmouseout="this.style.color='#facc15'; this.style.backgroundColor='transparent';" style="color: #facc15; 
-                        text-decoration: none; font-weight: 600; padding: 10px 16px; border-radius: 6px; transition: all 0.2s;">Services</a></li>
-                    <li><a href="gallery.html" onmouseover="this.style.color='#fef08a'; this.style.backgroundColor='#334155';"
-                         onmouseout="this.style.color='#facc15'; this.style.backgroundColor='transparent';" style="color: #facc15; 
-                         text-decoration: none; font-weight: 600; padding: 10px 16px; border-radius: 6px; transition: all 0.2s;">Gallery</a></li>
-                    <li><a href="contact.html" onmouseover="this.style.color='#fef08a'; this.style.backgroundColor='#334155';" 
-                        onmouseout="this.style.color='#facc15'; this.style.backgroundColor='transparent';" style="color: #facc15; 
-                        text-decoration: none; font-weight: 600; padding: 10px 16px; border-radius: 6px; transition: all 0.2s;">Contact Us</a></li>
-                </ul>
-            </nav>
-
+  <div class="nav-links">
+    <!-- Home (Checked by default on index page) -->
+    <div class="nav-item" onclick="window.location.href='index.html';">
+      <input type="radio" id="radio-home" name="nav-menu" checked>
+      <label for="radio-home">Home</label>
+    </div>
+    
+    <div class="nav-item" onclick="window.location.href='about.html';">
+      <input type="radio" id="radio-about" name="nav-menu">
+      <label for="radio-about">About Us</label>
+    </div>
     
     
+    <div class="nav-item" onclick="window.location.href='services.html';">
+      <input type="radio" id="radio-services" name="nav-menu">
+      <label for="radio-services">Services</label>
+    </div>
     
+    <div class="nav-item" onclick="window.location.href='gallery.html';">
+      <input type="radio" id="radio-gallery" name="nav-menu">
+      <label for="radio-gallery">Gallery</label>
+    </div>
+    
+    
+    <div class="nav-item" onclick="window.location.href='contact.html';">
+      <input type="radio" id="radio-contact" name="nav-menu">
+      <label for="radio-contact">Contact</label>
+    </div>
+  </div>
+</div>
 
 
 <div style="padding:20px 30px;">
