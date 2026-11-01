@@ -128,7 +128,6 @@ body {
   margin-top: 20px;
 }
 
-/* Left Column: Video Styling */
 .video-wrapper {
   flex: 1;
   min-width: 320px;
@@ -140,10 +139,10 @@ body {
   border: none;
 }
 
-/* Right Column: Form Box Styling */
+
 .form-wrapper {
   flex: 1;
-  min-width: 300px;
+  min-width: 200px;
   background-color: #1e293b;
   padding: 24px;
   border-radius: 8px;
