@@ -189,3 +189,7 @@ body {
 .form-wrapper button[type="submit"]:hover {
   background-color: #eab308;
 }
+.justify-content-justified {
+  display: flex;
+  justify-content: justified;
+}
