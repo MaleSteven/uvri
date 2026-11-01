@@ -134,8 +134,8 @@ body {
 }
 
 .video-wrapper iframe {
-  width: 100;
-  height: 100;
+  width: 1200;
+  height: 1200;
   border: none;
 }
 
