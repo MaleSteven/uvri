@@ -1,86 +1,91 @@
 /* Slideshow container covers the whole viewport behind the content */
-  .slideshow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Places the slides behind all text and tables */
-  }
+.slideshow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* Places the slides behind all text and tables */
+}
 
-  /* Core slide styling */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 1.5s ease-in-out; /* Smooth transition */
-  }
+/* Core slide styling */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  /* Hidden by default */
+  transition: opacity 1.5s ease-in-out;
+  /* Smooth transition */
+}
 
-  /* Active slide fades in */
-  .slide.active {
-    opacity: 1;
-  }
+/* Active slide fades in */
+.slide.active {
+  opacity: 1;
+}
 
-  /* Semi-dark overlay tint to make white text pop on bright background images */
-  .slideshow-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(3, 11, 43, 0.7); /* Matching your original #030b2b color with 70% opacity */
-    z-index: -1;
-  }
+/* Semi-dark overlay tint to make white text pop on bright background images */
+.slideshow-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 11, 43, 0.7);
+  /* Matching your original #030b2b color with 70% opacity */
+  z-index: -1;
+}
 
-  /* Interactive Navigation Link & Radio Styling */
-  .nav-links {
-    display: flex; 
-    gap: 25px; 
-    font-size: 18px; 
-    font-weight: bold;
-  }
+/* Interactive Navigation Link & Radio Styling */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-  }
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
 
-  /* Style the text label next to the radio button */
-  .nav-item label {
-    color: rgb(244, 244, 10); 
-    cursor: pointer;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
-  }
+/* Style the text label next to the radio button */
+.nav-item label {
+  color: rgb(244, 244, 10);
+  cursor: pointer;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
 
-  /* Highlight effect when mouse hovers over menu item */
-  .nav-item:hover label {
-    color: white !important; 
-    text-decoration: underline !important;
-  }
+/* Highlight effect when mouse hovers over menu item */
+.nav-item:hover label {
+  color: white !important;
+  text-decoration: underline !important;
+}
 
-  /* Responsive Map Frame Container */
-  .map-frame-container {
-    max-width: 800px;
-    margin: 30px 0 40px 0;
-    border: 2px solid #fbbf24;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #111827;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  }
+/* Responsive Map Frame Container */
+.map-frame-container {
+  max-width: 800px;
+  margin: 30px 0 40px 0;
+  border: 2px solid #fbbf24;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111827;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
 
-  .map-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 /* Row holding the map and the side image */
 .map-row {
   display: flex;
@@ -114,50 +119,66 @@
 
 /* Stack on small screens */
 @media (max-width: 700px) {
-  .map-row { flex-direction: column; }
+  .map-row {
+    flex-direction: column;
+  }
 }
+
 body {
   background-color: #0b132b;
 }
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   font-family: Arial, sans-serif;
 }
+
 .service-card {
   background: #fff;
   border: 1px solid #e5e7eb;
   padding: 25px;
   border-radius: 15px;
 }
+
 .service-card h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0 8px;
 }
+
 .service-card p {
   font-size: 13px;
   color: #555;
   line-height: 1.5;
 }
+
 .service-card ul {
   margin-top: 10px;
   padding-left: 18px;
   font-size: 13px;
 }
+
 .service-icon {
-  color: #c00000; /* that red icon color */
+  color: #c00000;
+  /* that red icon color */
   font-size: 28px;
 }
-@media(max-width: 900px){
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+@media(max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-@media(max-width: 600px){
-  .services-grid { grid-template-columns: 1fr; }
+
+@media(max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
-.video-form-container
- {
+
+.video-form-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -226,11 +247,57 @@ body {
 .form-wrapper button[type="submit"]:hover {
   background-color: #eab308;
 }
-img{
+
+img {
   border-radius: 15px;
   max-width: 100%;
   height: auto;
   gap: 20px;
   flex-wrap: wrap;
-  padding: 10px; 
+  padding: 10px;
 }
+
+img {
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+main .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+  main .gallery-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, border-color 0.2s;
+  }
+
+  main .gallery-grid img:hover {
+    transform: scale(1.1);
+    border: 2px #facc15;
+  }
+
+  @media (max-width: 640px) {
+    main .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    main .gallery-grid img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
